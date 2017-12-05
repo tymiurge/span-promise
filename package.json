@@ -7,12 +7,13 @@
   "description": "js promiced enhanced with time conditions",
   "main": "bind/index.js",
   "commentedScripts": {
-    "watch": "webpack --progress --colors --watch --config ./webpack.config.js",
-    "test": "karma start --reporters html"
+    "watch": "webpack --progress --colors --watch --config ./webpack.config.js"
+    
   },
   "scripts": {
     "build": "babel-node ./scripts/emptyFolder && webpack --config ./webpack.prod.config.js",
-    "dev": "webpack-dev-server --content-base src/index --hot --host 0.0.0.0 --config ./webpack.config.js"
+    "dev": "webpack-dev-server --content-base src/index --hot --host 0.0.0.0 --config ./webpack.config.js",
+    "test": "karma start --reporters html"
   },
   "repository": {
     "type": "git",
