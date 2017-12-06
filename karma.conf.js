@@ -18,6 +18,7 @@ module.exports = function (config) {
     // browsers: ['Chrome','PhantomJS','Firefox'],
     browsers: ['PhantomJS'],
     files: [
+      { pattern: 'node_modules/babel-polyfill/dist/polyfill.js', watched: false},
       { pattern: 'tests.webpack.js', watched: false }
     ],
     frameworks: [
