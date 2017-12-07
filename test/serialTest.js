@@ -9,7 +9,7 @@ describe('serial', () => {
     const funcPromises = spans.map(span => () => new Promise((resolve, reject) => {
         setTimeout(() => { resolve({span, resolvedAt: Date.now() | 0}) }, span)
     }))
-    const result = spanPromise.serial(funcPromises).then(results => {
+    spanPromise.serial(funcPromises).then(results => {
         const promisesExecutedInOrder = results.every((value, idx) => value.span === spans[idx])
         expect(promisesExecutedInOrder).toBe(true)
     })
@@ -28,7 +28,7 @@ describe('serial', () => {
       })
     ]
   
-    const result = spanPromise.serial(funcPromises)
+    spanPromise.serial(funcPromises)
       .then(results => {
           fail('then should not be called if seria is rejected.')
       })

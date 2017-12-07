@@ -37,10 +37,9 @@ module.exports = function (config) {
     reporters: ['progress', 'html'],
 
     htmlReporter: {
-      outputFile: 'report/units.html',
+      outputFile: 'report/testReport.html',
       // Optional
-      pageTitle: 'Unit Tests',
-      subPageTitle: 'A sample project description',
+      pageTitle: 'spanPromise tests',
       groupSuites: true,
       useCompactStyle: true,
       useLegacyStyle: true
