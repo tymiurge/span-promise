@@ -1,6 +1,9 @@
 /** 
- * serial executes Promises sequentially.
- * @param {funcs} An array of funcs that return promises.
+ * Executes promises sequentially and returns a pending promise with accumulated results.
+ * 
+ * @param {funcs} array of funcs that return promises.
+ * @returns Promise in pending status in case if all promices from funcs are resolved 
+ *          or rejected promise as soon as a single promise from the funcs fails. 
  * @example
  * const urls = ['/url1', '/url2', '/url3']
  * serial(urls.map(url => () => $.ajax(url)))
