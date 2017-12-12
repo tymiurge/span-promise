@@ -1,19 +1,6 @@
 
-
-/*
-const serial = (funcs, test) => funcs.reduce(
-    (promise, func) => promise.then(result => func().then(Array.prototype.concat.bind(result))), 
-    Promise.resolve([])
-)
-*/
-
 // every - exits if at least one is false 
 // some - exits as soon as one is true
-
-const serial = funcs => funcs.reduce(
-    (promise, func) => promise.then(result => func().then(Array.prototype.concat.bind(result))), 
-    Promise.resolve([])
-)
 
 const serialEvery = (funcs, test) => {
     let iterator = funcs[Symbol.iterator]()
