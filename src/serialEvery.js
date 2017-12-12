@@ -1,7 +1,8 @@
-
-// every - exits if at least one is false 
-// some - exits as soon as one is true
-
+/**
+ * Executes promises sequentially untill some of them fails agains the test
+ * @param {*} funcs 
+ * @param {*} test function with 2 arguments accumulaterResult, lastResult
+ */
 const serialEvery = (funcs, test) => {
     let iterator = funcs[Symbol.iterator]()
     const recursion = (funcIterator, accumulator) => {
